@@ -1,0 +1,76 @@
+﻿@model ePro.ViewModels.ProductIndexData
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Products)
+    {
+    string selectedRow = "";
+    if (item.ProductListingID == ViewBag.ProductID)
+    {
+        selectedRow = "success";
+    }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+             </td>
+
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.ProductListingID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductListingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductListingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductListingID })
+            </td>
+
+
+
+         </tr>  
+
+    }
+</table>
+
+
+@if (Model.ComplianceForms != null)
+{
+    <h3>Compliance forms</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Complaince Type</th>
+        </tr>
+        @foreach (var item in Model.ComplianceForms)
+        {
+            string selectedRow = "";
+            if (item.ComplianceFormID == ViewBag.complianceformID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { ComplianceFormID = item.ComplianceFormID })
+                </td>
+                <td>
+                    @item.ComplianceFormID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.ComplianceCategory.Name
+                </td>
+            </tr>
+        }
+    </table>
+}
+    
