@@ -33,7 +33,7 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.ProductListingID })
             </td>
 
-
+            @{ int prodid = item.ProductListingID;}
 
          </tr>  
 
@@ -97,6 +97,30 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
+                         <td>
+                             @foreach (var prods in ViewBag.productcp)
+                             {
+                                 if (prods.ComplianceItemsID == item.ComplianceItem.ComplianceItemsID and @prodis)
+                                 { 
+                                   <span>@prods.ComplianceItemsID</span>
+                                 @Html.ActionLink("Remove Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+                                 }
+                                 else if (prods.ComplianceItemsID != item.ComplianceItem.ComplianceItemsID)
+                                 {
+                                    <span>@prods.ComplianceItemsID</span>
+                                  @Html.ActionLink("Add Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+
+                                 }
+
+                             }
+
+
+
+                         </td>
+                        <td>
+                           | @Html.ActionLink("Update", "Index", new { compid = item.ComplianceItem.ComplianceItemsID }) |
+                        </td>
+
                     </tr>
                     }
              

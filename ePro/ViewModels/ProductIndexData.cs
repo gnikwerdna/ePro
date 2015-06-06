@@ -11,5 +11,6 @@ namespace ePro.ViewModels
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ComplianceForm> ComplianceForms { get; set; }
         public IEnumerable<Compliance> Compliances { get; set; }
+        public IEnumerable<ProductCompliance> ProductCompliances { get; set; }
     }
 }

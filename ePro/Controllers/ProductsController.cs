@@ -10,6 +10,8 @@ using ePro.DB;
 using ePro.Models;
 using ePro.ViewModels;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ePro.Controllers
 {
@@ -17,13 +19,42 @@ namespace ePro.Controllers
     {
         private eProContext db = new eProContext();
 
+       private void AddComplianceProduct(int? productid, int? complianceitemid, int checkedvalue)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["cmdstrings"].ToString();
+           
+       
+           using (SqlConnection connection =new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand("",connection))
+            {
+                command.Connection.Open();
+                command.CommandText = "insert into ProductCompliances (ComplianceItemsID,ProductListingID,Checked) values (" +complianceitemid+","+productid+","+checkedvalue+")";
+              
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+
+            }
+
+
+        }
+
+
+
+
         // GET: Products
-        public ActionResult Index(int? id, int? complianceformID)
+        public ActionResult Index(int? id,  int? complianceformID, int? compid)
         {
 
             var viewModel = new ProductIndexData();
-
-            viewModel.Products = db.Products
+            if (compid!=null)
+            {
+                int? updprodid = id;
+                int? upcompid = compid;
+                AddComplianceProduct(updprodid, upcompid, 1);
+            }
+          
+            
+            viewModel.Products = db.Products 
                 .Include(i => i.ComplianceForms.Select(c => c.ComplianceCategory))
                 .OrderBy(i => i.ProductName);
             if (id != null)
@@ -49,7 +80,11 @@ namespace ePro.Controllers
 
                 viewModel.Compliances = selectedcomplianceform.Compliances;
             }
+            var productcomp = (from p in db.ProductCompliance where p.ProductListingID == id select p);
+            ViewBag.productcp = productcomp.ToList();
 
+            var proditems = from a in db.ProductCompliance select a;
+            ViewBag.ProdItems = new SelectList(proditems, "ProductListingID", "ProductName");
 
             return View(viewModel);
         }
@@ -77,6 +112,8 @@ namespace ePro.Controllers
             PopulateAssignedComplianceFormData(product);
             return View();
         }
+
+        
         private void PopulateAssignedComplianceFormData(Product product)
         {
             var allcomplianceforms = db.ComplianceForm;
