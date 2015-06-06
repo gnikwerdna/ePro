@@ -1,0 +1,34 @@
+﻿@model ePro.Models.ComplianceForm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ComplianceForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplianceCategory.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplianceCategory.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComplianceFormID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
