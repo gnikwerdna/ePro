@@ -25,7 +25,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
              </td>
-
+           
             <td>
                 @Html.ActionLink("Select", "Index", new { id = item.ProductListingID }) |
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductListingID }) |
@@ -83,6 +83,9 @@
             <th>Name</th>
             <th>Description</th>
         </tr>
+        @{ int intcounter = 1;}
+        @{ bool blnFlg = false;}
+
         @foreach (var item in Model.Compliances)
         {
             if(item.ComplianceItem !=null)
@@ -97,33 +100,71 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
-                         <td>
-                             @foreach (var prods in ViewBag.productcp)
-                             {
-                                 if (prods.ComplianceItemsID == item.ComplianceItem.ComplianceItemsID and @prodis)
-                                 { 
-                                   <span>@prods.ComplianceItemsID</span>
-                                 @Html.ActionLink("Remove Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
-                                 }
-                                 else if (prods.ComplianceItemsID != item.ComplianceItem.ComplianceItemsID)
-                                 {
-                                    <span>@prods.ComplianceItemsID</span>
-                                  @Html.ActionLink("Add Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
-
-                                 }
-
-                             }
-
-
-
-                         </td>
+                         
+                        
                         <td>
-                           | @Html.ActionLink("Update", "Index", new { compid = item.ComplianceItem.ComplianceItemsID }) |
-                        </td>
+                           
+                            @if (ViewBag.productcp.Count ==0)
+                            {
+                            @Html.ActionLink("Add Compliance -New entry", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+                            }
+                            else
+                            {
+                             int rsetcount = ViewBag.productcp.Count;
+                             for(int c= 1; c< rsetcount; c++)
+                             {
+                                
+                              foreach (var i in ViewBag.productcp)
+                              {
 
+                                 if (i.ComplianceItemsID == item.ComplianceitemsID)
+                                  {
+                                            @Html.ActionLink("Complies - remove?", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+                                            @intcounter
+                                            blnFlg = true;
+                                             break;
+                                         }
+                                  else if (i.ComplianceItemsID != item.ComplianceitemsID)
+                                  {
+                                      if (intcounter == item.ComplianceitemsID)
+                                      {
+                                        @Html.ActionLink("Add Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+                                          blnFlg = true;
+                                          break;
+                                      }
+                                     
+                                  }
+
+
+
+
+                                 //                if (i.ComplianceItemsID == item.ComplianceitemsID || intcounter % 1==0 )
+                                 //                {
+                                 //                    @intcounter
+                                 //                    @Html.ActionLink("Complies - remove?", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+                                 //
+
+                                 //                }
+                                 //                else if (i.ComplianceItemsID != item.ComplianceitemsID || intcounter % 2 == 0)
+                                 //               {
+                                 //                   @intcounter
+                                 //                   @Html.ActionLink("Add Compliance", "Index", new { compid = item.ComplianceItem.ComplianceItemsID })
+
+                                 //                }
+                                 intcounter++;
+                              }
+                              if (blnFlg == true)
+                              {
+                                  blnFlg = false;
+                                  break;
+                              }
+                             }
+                            }
+                         </td>
                     </tr>
                     }
-             
+            //intcounter++;
         }
     </table>
+   
 }    

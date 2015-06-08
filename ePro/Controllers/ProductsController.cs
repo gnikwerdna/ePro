@@ -22,18 +22,49 @@ namespace ePro.Controllers
        private void AddComplianceProduct(int? productid, int? complianceitemid, int checkedvalue)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["cmdstrings"].ToString();
+           int intreccheck=0;
            
        
-           using (SqlConnection connection =new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand("",connection))
+            using (SqlConnection connection =new SqlConnection(connectionString))
+            using (SqlCommand cmdchk = new SqlCommand("Select count(*) from ProductCompliances where ComplianceItemsID =" + complianceitemid + " and ProductListingID=" + productid, connection))
             {
-                command.Connection.Open();
-                command.CommandText = "insert into ProductCompliances (ComplianceItemsID,ProductListingID,Checked) values (" +complianceitemid+","+productid+","+checkedvalue+")";
-              
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                cmdchk.Connection.Open();
+                intreccheck = (int)cmdchk.ExecuteScalar();
+                cmdchk.Connection.Close();
 
             }
+            using (SqlConnection connection2 = new SqlConnection(connectionString))
+                if (intreccheck == 0)
+                {
+                    using (SqlCommand command = new SqlCommand("", connection2))
+                    {
+
+
+
+                        command.Connection.Open();
+                        command.CommandText = "insert into ProductCompliances (ComplianceItemsID,ProductListingID,Checked) values (" + complianceitemid + "," + productid + "," + checkedvalue + ")";
+
+                        command.ExecuteNonQuery();
+                        command.Connection.Close();
+
+                    }
+                }
+                else
+                {
+                    using (SqlCommand command = new SqlCommand("", connection2))
+                    {
+
+
+
+                        command.Connection.Open();
+                        command.CommandText = "Delete from  ProductCompliances where ComplianceItemsID =" + complianceitemid + " and ProductListingID=" + productid;
+
+                        command.ExecuteNonQuery();
+                        command.Connection.Close();
+
+                    }
+
+                }
 
 
         }
@@ -82,7 +113,7 @@ namespace ePro.Controllers
             }
             var productcomp = (from p in db.ProductCompliance where p.ProductListingID == id select p);
             ViewBag.productcp = productcomp.ToList();
-
+          
             var proditems = from a in db.ProductCompliance select a;
             ViewBag.ProdItems = new SelectList(proditems, "ProductListingID", "ProductName");
 
@@ -184,6 +215,8 @@ namespace ePro.Controllers
                 }
             }
         }
+       
+
         // GET: Products/Edit/5
         public ActionResult Edit(int? id)
         {

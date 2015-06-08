@@ -56,6 +56,9 @@ namespace ePro.Controllers
             {
                 db.Compliance.Add(compliance);
                 db.SaveChanges();
+          
+
+
                 return RedirectToAction("Index");
             }
 
