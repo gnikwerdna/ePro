@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
+  <DbDacFx path="C:\projects\ePro\ePro\ePro\obj\Release\AutoScripts\cmdstrings_IncrementalSchemaOnly.dacpac" dacpacAction="Deploy" />
   <IisApp path="C:\projects\ePro\ePro\ePro\obj\Release\Package\PackageTmp" />
   <setAcl path="C:\projects\ePro\ePro\ePro\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
   <setAcl path="C:\projects\ePro\ePro\ePro\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />

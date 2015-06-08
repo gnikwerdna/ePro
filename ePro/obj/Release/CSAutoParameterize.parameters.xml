@@ -3,6 +3,9 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-ePro-20150605111357.mdf;Initial Catalog=aspnet-ePro-20150605111357;Integrated Security=True" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
+  <parameter name="cmdstrings-Web.config Connection String" description="cmdstrings Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ePro.DB.eProContext;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cmdstrings']/@connectionString" />
+  </parameter>
   <parameter name="ePro.DB.eProContext-Web.config Connection String" description="ePro.DB.eProContext Connection String used in web.config by the application to access the database." defaultValue="ePro.DB.eProContext_ConnectionString" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ePro.DB.eProContext']/@connectionString" />
   </parameter>

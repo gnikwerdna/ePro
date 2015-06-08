@@ -7,6 +7,9 @@
   <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="eProductman/App_Data" tags="Hidden">
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
   </parameter>
+  <parameter name="cmdstrings-Web.config Connection String" description="" value="Data Source=tcp:pkmlguftek.database.windows.net,1433;Initial Catalog=eProductman_db;User ID=gnikwerdna@pkmlguftek;Password=187Ch@lleng3r" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cmdstrings']/@connectionString" />
+  </parameter>
   <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:pkmlguftek.database.windows.net,1433;Initial Catalog=eProductman_db;User ID=gnikwerdna@pkmlguftek;Password=187Ch@lleng3r" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\projects\\ePro\\ePro\\ePro\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>

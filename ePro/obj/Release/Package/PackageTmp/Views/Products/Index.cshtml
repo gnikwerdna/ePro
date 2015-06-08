@@ -25,7 +25,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
              </td>
-
+           
             <td>
                 @Html.ActionLink("Select", "Index", new { id = item.ProductListingID }) |
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductListingID }) |
@@ -33,7 +33,7 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.ProductListingID })
             </td>
 
-
+            @{ int prodid = item.ProductListingID;}
 
          </tr>  
 
@@ -83,12 +83,17 @@
             <th>Name</th>
             <th>Description</th>
         </tr>
+       
         @foreach (var item in Model.Compliances)
         {
             if(item.ComplianceItem !=null)
                     {
 
                       <tr>
+                          <td>
+
+                            @item.ComplianceitemsID
+                          </td>
                         <td>
                      
                            @item.ComplianceItem.ItemName
@@ -97,9 +102,48 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
+                         <td>
+                             @{bool blnflag = true;}
+                             @{int intcounter = 0;}
+                             @foreach (var a in ViewBag.productcp)
+                             {
+                                 if (a.ComplianceItemsID == item.ComplianceitemsID)
+                                 {
+                                     
+                                     if (a.Checked == 1)
+                                     { 
+                                   
+                                       
+                                      @Html.ActionLink("Remove compliance", "Index", new { ComplianceFormID = item.ComplianceFormID, compid = item.ComplianceitemsID })
+                                       blnflag =false;
+                                    
+                                     }
+                                    
+                                     else
+                                     {
+                                        
+                                         intcounter++;
+                                         blnflag = true;
+
+                                     }
+                                 }
+
+                             }
+
+                         </td>
+                          <td>
+                              @if (@blnflag ==true)
+                              {
+                              @Html.ActionLink("Add compliance", "Index", new { ComplianceFormID = item.ComplianceFormID, compid = item.ComplianceitemsID })
+                              }
+
+                          </td>
+                        
+                        
                     </tr>
                     }
-             
+           
         }
     </table>
+   
 }    
