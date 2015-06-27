@@ -168,6 +168,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductListingsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DB\eProContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -282,6 +283,11 @@
     <Content Include="Views\Compliances\Details.cshtml" />
     <Content Include="Views\Compliances\Edit.cshtml" />
     <Content Include="Views\Compliances\Index.cshtml" />
+    <Content Include="Views\ProductListings\Create.cshtml" />
+    <Content Include="Views\ProductListings\Delete.cshtml" />
+    <Content Include="Views\ProductListings\Details.cshtml" />
+    <Content Include="Views\ProductListings\Edit.cshtml" />
+    <Content Include="Views\ProductListings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

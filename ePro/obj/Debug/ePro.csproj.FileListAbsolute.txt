@@ -110,4 +110,3 @@ C:\projects\ePro\ePro\ePro\obj\Debug\ePro.Migrations.InitialCreate.resources
 C:\projects\ePro\ePro\ePro\obj\Debug\ePro.csproj.GenerateResource.Cache
 C:\projects\ePro\ePro\ePro\obj\Debug\ePro.dll
 C:\projects\ePro\ePro\ePro\obj\Debug\ePro.pdb
-C:\projects\ePro\ePro\ePro\obj\Debug\ePro.csprojResolveAssemblyReference.cache

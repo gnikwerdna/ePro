@@ -1,0 +1,429 @@
+﻿@model IEnumerable<ePro.Models.ProductListing>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ABCClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ControlCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cond)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indicator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CyclicCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserGroup1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PackQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConversionFactor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AltUnitDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemGTIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModVAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Storage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StandardCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplacementCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DutyPaidCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfoCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelfLifeDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyTypeFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLastChange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReorderPolicy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReorderReview)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReorderBuyer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovementCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesTaxPaidRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SortCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExciseQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnSpscCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnalysisCode1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnalysisCode2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnalysisCode3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpareAnalysisCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stkTallyCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginSource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceProtection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkSpare1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkSpare2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyDate1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyDate2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha201)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha202)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha41)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha42)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha43)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyAlpha44)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyNum1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyNum2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyNum3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StkUserOnlyNum4)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Group)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABCClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ControlCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cond)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indicator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CyclicCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserGroup1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PackQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConversionFactor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AltUnitDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemGTIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModVAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Storage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StandardCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplacementCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DutyPaidCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InfoCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShelfLifeDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyTypeFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateLastChange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReorderPolicy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReorderReview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReorderBuyer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MovementCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesTaxPaidRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SortCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExciseQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnSpscCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnalysisCode1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnalysisCode2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnalysisCode3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpareAnalysisCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stkTallyCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginSource)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceProtection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkSpare1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkSpare2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyDate1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyDate2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha201)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha202)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha41)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha42)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha43)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyAlpha44)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyNum1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyNum2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyNum3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StkUserOnlyNum4)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductListingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductListingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductListingID })
+        </td>
+    </tr>
+}
+
+</table>
